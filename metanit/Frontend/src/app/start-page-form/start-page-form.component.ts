@@ -11,21 +11,22 @@ export class StartPageFormComponent {
 
   constructor(private djangoApi:DjangoApiServiceService) {
   }
+
   myForm : FormGroup = new FormGroup({
     "searchSite": new FormControl(),
+    "rezult": new FormControl(),
   });
 
 
   search(){
     debugger;
     let value  = this.myForm.get('searchSite')?.value;
-    this.djangoApi.searchSiteRequest(value).subscribe({
-      next(position) {
-        console.log('Current Position: ', position);
-      },
-      error(msg) {
-        console.log('Error Getting Location: ', msg);
-      }
-    });
+    this.djangoApi.searchSiteRequest(value).subscribe(X=>{
+      this.showResult(X.status);
+    })
+  }
+
+  showResult(result: any){
+  this.myForm.get('rezult')?.setValue(result);
   }
 }

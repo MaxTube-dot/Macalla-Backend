@@ -1,6 +1,6 @@
 <form [formGroup]="myForm" >
 <div style="padding:20px">
-  <div class="data-wrapper" style="">
+  <div class="data-wrapper">
     <div class="text-wrapper">
       <p>Введите имя сайта</p>
     </div>
@@ -10,6 +10,9 @@
     <div class="text-wrapper">
       <button (click)="search()"><p>Поиск</p></button>
     </div>
+  </div>
+  <div *ngIf="myForm.get('rezult')?.value">
+    <p>Результат: {{myForm.get('rezult')?.value}}</p>
   </div>
 </div>
 </form>

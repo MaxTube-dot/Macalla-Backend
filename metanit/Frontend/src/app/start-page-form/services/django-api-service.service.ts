@@ -11,8 +11,7 @@ export class DjangoApiServiceService {
 
   searchSiteRequest(url:string):Observable<any>{
     debugger;
-    let headers = new HttpHeaders({'Host': '127.0.0.1:8000'});
     let urlRequest = this.urlBase + 'searchsite?urlsite=' + url;
-    return this.httpClient.get<any>(urlRequest, {headers: headers});
+    return this.httpClient.get(urlRequest);
   }
 }
