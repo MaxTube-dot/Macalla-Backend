@@ -6,11 +6,11 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class DjangoApiServiceService {
-url = 'http://localhost:8000/'
+url = 'http://127.0.0.1:8000/searchsite?urlsite=GOOGLE'
   constructor(private httpClient:HttpClient) { }
 
   searchSiteRequest(url:string):Observable<any>{
-    return this.httpClient.get(url+'searchsite&url=' + url);
+    return this.httpClient.get(url+'searchsite?urlsite=' + url);
 
   }
 }

@@ -19,9 +19,8 @@ export class StartPageFormComponent {
   search(){
     debugger;
     let value  = this.myForm.get('searchSite')?.value;
-    //this.djangoApi.searchSiteRequest(value);
-    alert("its works" + value);
-
-
+    this.djangoApi.searchSiteRequest(value).subscribe(x=>{
+      alert("its works" + x);
+    });
   }
 }
