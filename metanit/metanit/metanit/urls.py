@@ -21,5 +21,6 @@ from hello import views
 urlpatterns = [
     path('', views.index, name='home'),
     path('searchsite', views.searchsite),
+    path('getdog', views.dog_pars),
     path('contact', views.contact),
 ]
