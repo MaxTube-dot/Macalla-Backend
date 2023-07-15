@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { StartPageFormComponent } from './start-page-form/start-page-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { RandomDogComponent } from './start-page-form/random-dog/random-dog.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartPageFormComponent
+    StartPageFormComponent,
+    RandomDogComponent
   ],
     imports: [
         BrowserModule,

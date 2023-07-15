@@ -1,0 +1,15 @@
+<form [formGroup]="myForm" >
+    <div style="padding:20px">
+        <div class="data-wrapper" style="">
+            <div class="text-wrapper">
+                <p>Эта ваша собака?</p>
+            </div>
+            <div class="text-wrapper">
+                <button (click)="NotDog()"><p>Нет</p></button>
+            </div>
+            <div *ngIf="myForm.get('dog')?.value">
+                <img src="{{myForm.get('dog')?.value}}}">
+            </div>
+        </div>
+    </div>
+</form>

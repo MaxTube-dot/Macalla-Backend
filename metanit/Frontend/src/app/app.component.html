@@ -7,6 +7,7 @@
   <button (click)="start()" *ngIf="!starting" class="cta-button">Начать</button>
 
   <app-start-page-form *ngIf="starting"></app-start-page-form>
+  <app-random-dog *ngIf="starting"></app-random-dog>
 </main>
 
 <footer>
