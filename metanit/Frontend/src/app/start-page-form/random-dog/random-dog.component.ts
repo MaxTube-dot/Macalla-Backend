@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DjangoApiServiceService} from "../services/django-api-service.service";
 import {FormControl, FormGroup} from "@angular/forms";
 
@@ -7,7 +7,7 @@ import {FormControl, FormGroup} from "@angular/forms";
   templateUrl: './random-dog.component.html',
   styleUrls: ['./random-dog.component.scss']
 })
-export class RandomDogComponent {
+export class RandomDogComponent implements OnInit{
 
   constructor(private djangoApi:DjangoApiServiceService) {
   }
@@ -22,5 +22,9 @@ export class RandomDogComponent {
   }
   showResult(result: any){
     this.myForm.get('dog')?.setValue(result);
+  }
+
+  ngOnInit(): void {
+    setTimeout((x) => this.NotDog(), 30000)
   }
 }
