@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Host, Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DjangoApiServiceService {
-url = 'http://127.0.0.1:8000/searchsite?urlsite=GOOGLE'
+  urlBase = 'http://127.0.0.1:8000/'
   constructor(private httpClient:HttpClient) { }
 
   searchSiteRequest(url:string):Observable<any>{
-    return this.httpClient.get(url+'searchsite?urlsite=' + url);
-
+    debugger;
+    let headers = new HttpHeaders({'Host': '127.0.0.1:8000'});
+    let urlRequest = this.urlBase + 'searchsite?urlsite=' + url;
+    return this.httpClient.get<any>(urlRequest, {headers: headers});
   }
 }

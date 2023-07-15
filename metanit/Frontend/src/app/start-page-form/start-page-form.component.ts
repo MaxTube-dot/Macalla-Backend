@@ -19,8 +19,13 @@ export class StartPageFormComponent {
   search(){
     debugger;
     let value  = this.myForm.get('searchSite')?.value;
-    this.djangoApi.searchSiteRequest(value).subscribe(x=>{
-      alert("its works" + x);
+    this.djangoApi.searchSiteRequest(value).subscribe({
+      next(position) {
+        console.log('Current Position: ', position);
+      },
+      error(msg) {
+        console.log('Error Getting Location: ', msg);
+      }
     });
   }
 }

@@ -20,6 +20,6 @@ from hello import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('about', views.about),
+    path('searchsite', views.searchsite),
     path('contact', views.contact),
 ]
