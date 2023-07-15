@@ -8,7 +8,7 @@
                 <button (click)="NotDog()"><p>Нет</p></button>
             </div>
             <div *ngIf="myForm.get('dog')?.value">
-                <img src="{{myForm.get('dog')?.value}}}">
+                <img style="max-width:72px" src="{{myForm.get('dog')?.value}}}">
             </div>
         </div>
     </div>
