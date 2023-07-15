@@ -16,15 +16,19 @@ export class RandomDogComponent implements OnInit{
   });
 
   NotDog(){
+    setTimeout(() => this.NotDog(), 10000)
+
+
     this.djangoApi.GetNewDog().subscribe(X=>{
       this.showResult(X.dogurl);
     })
+
   }
   showResult(result: any){
     this.myForm.get('dog')?.setValue(result);
   }
 
   ngOnInit(): void {
-    setTimeout((x) => this.NotDog(), 30000)
+    setTimeout(() => this.NotDog(), 1000)
   }
 }
