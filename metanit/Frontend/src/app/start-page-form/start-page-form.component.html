@@ -1,0 +1,15 @@
+<form [formGroup]="myForm" >
+<div style="padding:20px">
+  <div class="data-wrapper" style="">
+    <div class="text-wrapper">
+      <p>Введите имя сайта</p>
+    </div>
+    <div class="text-wrapper">
+      <input type="text" formControlName="searchSite">
+    </div>
+    <div class="text-wrapper">
+      <button (click)="search()"><p>Поиск</p></button>
+    </div>
+  </div>
+</div>
+</form>

@@ -1,0 +1,14 @@
+<header>
+  <h1>Проверка доступности вашего сайта</h1>
+</header>
+
+<main>
+  <p>Проверка работоспособности вашего сайта</p>
+  <button (click)="start()" *ngIf="!starting" class="cta-button">Начать</button>
+
+  <app-start-page-form *ngIf="starting"></app-start-page-form>
+</main>
+
+<footer>
+  <p>© 2023 Maccala. All rights reserved.</p>
+</footer>
